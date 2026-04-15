@@ -14,7 +14,7 @@
         .logo-text { font-size: 3rem; font-weight: 800; letter-spacing: -2px; color: #ffffff; margin-bottom: 10px; display: none; }
         .tagline { color: #aaaaaa; font-size: 1.1rem; }
 
-        /* Card do Produto Ajustado para o Ícone */
+        /* Card do Produto */
         .product-card { 
             background: #000000; border: 1px solid #333333; border-radius: 24px; 
             padding: 30px; margin: 40px 0; display: flex; align-items: center; gap: 25px;
@@ -41,7 +41,12 @@
 
         .legal-section { margin-top: 60px; padding: 40px; background: #000000; border: 1px solid #333333; border-radius: 16px; font-size: 0.9rem; color: #aaaaaa; }
         .legal-section h3 { color: #ffffff; margin-bottom: 20px; }
-        .footer { text-align: center; margin-top: 60px; color: #666666; font-size: 0.8rem; }
+        
+        /* Links do Rodapé */
+        .footer { text-align: center; margin-top: 60px; color: #666666; font-size: 0.8rem; padding-bottom: 40px; }
+        .footer-links { margin-bottom: 15px; }
+        .footer-links a { color: #888888; text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        .footer-links a:hover { color: #ffffff; }
     </style>
 </head>
 <body>
@@ -66,13 +71,17 @@
         </section>
 
         <section class="legal-section">
-            <h3>Privacidade e Termos</h3>
+            <h3>Privacidade e Transparência</h3>
             <p>A <strong>Aiex</strong> preza pela segurança dos seus dados. No aplicativo Organiza+, os dados financeiros inseridos são tratados de forma confidencial e utilizados exclusivamente para gerar os relatórios e funcionalidades do sistema.</p>
             <br>
-            <p>Desenvolvido por Mikhail Ayache.</p>
+            <p>Desenvolvido por <strong>Mikhail Ayache</strong>.</p>
         </section>
 
         <footer class="footer">
+            <div class="footer-links">
+                <a href="politica_privacidade_organiza+.html">Política de Privacidade</a> | 
+                <a href="termos_de_uso_organiza+.html">Termos de Uso</a>
+            </div>
             © 2026 Aiex. Todos os direitos reservados. <br>
             Aiex - Gestão Inteligente de Negócios.
         </footer>
