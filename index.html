@@ -23,11 +23,38 @@
         .logo-img { max-width: 150px; filter: brightness(0) invert(1); margin-bottom: 8px; }
         .tagline { color: #888; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
 
+        /* Botão de Contato Chique */
+        .cta-header {
+            display: flex; justify-content: center; margin: 20px 0 40px;
+        }
+        .btn-contact-main {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-contact-main:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255,255,255,0.1);
+        }
+
         /* Propósito */
         .intro-box {
             text-align: center; background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
             border: 1px solid rgba(255, 255, 255, 0.08); padding: 35px; border-radius: 20px; 
-            margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .intro-box h2 { font-size: 1.1rem; color: #fff; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
         .intro-box p { color: #aaa; font-size: 0.95rem; font-weight: 300; line-height: 1.7; }
@@ -38,7 +65,7 @@
         }
         .category-title::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
 
-        /* Metodologia de Trabalho */
+        /* Metodologia */
         .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .process-card {
             background: transparent; border: 1px solid rgba(255,255,255,0.05);
@@ -49,17 +76,17 @@
         .process-card h4 { font-size: 1rem; color: #fff; margin-bottom: 10px; position: relative; z-index: 2; }
         .process-card p { font-size: 0.85rem; color: #777; position: relative; z-index: 2; line-height: 1.5; }
 
-        /* Carrossel de Empresas Atendidas - Corrigido o corte da animação (Padding 20px no topo/baixo) */
-        .carousel-container { position: relative; overflow: hidden; padding: 20px 45px; margin: -20px 0; }
+        /* Carrossel Atendido */
+        .carousel-container { position: relative; overflow: hidden; padding: 25px 45px; margin: -20px 0; }
         .carousel-track { display: flex; gap: 15px; width: 100%; transition: transform 0.4s ease-in-out; }
         
         .feedback-card {
-            width: calc(33.333% - 10px); /* 3 por vez no PC */
+            width: calc(33.333% - 10px);
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
             padding: 25px 20px; border-radius: 20px; text-align: center; flex-shrink: 0; transition: 0.3s;
             display: flex; flex-direction: column; align-items: center; justify-content: space-between;
         }
-        .feedback-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .feedback-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); transform: translateY(-5px); }
         
         .client-thumb {
             width: 70px; height: 70px; margin: 0 auto 10px; border-radius: 18px; 
@@ -67,30 +94,28 @@
         }
         .client-thumb img { width: 100%; height: auto; }
         .stars { color: #FFD700; font-size: 0.75rem; margin-bottom: 8px; letter-spacing: 1px; }
-        .client-quote { font-size: 0.8rem; color: #888; font-style: italic; margin-bottom: 15px; line-height: 1.4; }
+        .client-quote { font-size: 0.78rem; color: #888; font-style: italic; margin-bottom: 15px; line-height: 1.4; height: 3.5em; overflow: hidden; }
         .service-tag { 
             display: inline-block; font-size: 0.65rem; color: #fff; 
-            background: rgba(255,255,255,0.1); padding: 6px 12px; 
+            background: rgba(255,255,255,0.08); padding: 6px 12px; 
             border-radius: 8px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;
         }
         
         .carousel-btn {
             background: #111; border: 1px solid rgba(255,255,255,0.1); color: #fff; 
             width: 38px; height: 38px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; 
-            top: 50%; transform: translateY(-50%); transition: 0.3s; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+            top: 50%; transform: translateY(-50%); transition: 0.3s; display: flex; align-items: center; justify-content: center;
         }
-        .carousel-btn:hover { background: #fff; color: #000; transform: translateY(-50%) scale(1.1); }
+        .carousel-btn:hover { background: #fff; color: #000; }
         .btn-left { left: 0; }
         .btn-right { right: 0; }
 
-        /* Cards de Apps e Soluções */
+        /* Cards Gerais */
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .card { 
             background: #0a0a0a; border: 1px solid rgba(255, 255, 255, 0.05); 
             padding: 30px; border-radius: 25px; display: flex; gap: 25px; align-items: center; transition: 0.3s;
         }
-        .card:hover { border-color: rgba(255,255,255,0.15); }
-        
         .icon-box { 
             width: 85px; height: 85px; flex-shrink: 0; border-radius: 22px; 
             background: #111; border: 1px solid rgba(255,255,255,0.1);
@@ -100,22 +125,18 @@
         .card:hover .icon-box { box-shadow: 0 0 25px rgba(255, 255, 255, 0.15); border-color: rgba(255,255,255,0.4); transform: translateY(-5px); }
         .icon-box img { width: 100%; height: 100%; border-radius: 22px; }
 
-        .content h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
-        .content p { color: #888; font-size: 0.95rem; line-height: 1.5; }
-
         .btn-play {
             display: inline-flex; align-items: center; gap: 12px;
             background: linear-gradient(145deg, #ffffff, #e0e0e0); color: #000; 
             text-decoration: none; padding: 14px 28px; border-radius: 15px; 
-            font-size: 0.9rem; font-weight: 900; margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.1); transition: 0.3s;
+            font-size: 0.9rem; font-weight: 900; margin-top: 15px; transition: 0.3s;
         }
-        .btn-play:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,255,255,0.25); }
+        .btn-play:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,255,255,0.2); }
 
         .status-button {
             display: inline-block; padding: 10px 20px; font-size: 0.75rem; font-weight: 800;
             text-transform: uppercase; background: rgba(255,255,255,0.03); color: #444; 
-            border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-top: 15px; cursor: default;
+            border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-top: 15px;
         }
 
         /* FAQ Sanfona */
@@ -123,16 +144,14 @@
             background: #0a0a0a; border: 1px solid rgba(255,255,255,0.05);
             border-radius: 16px; margin-bottom: 15px; transition: 0.3s;
         }
-        .faq-item:hover { border-color: rgba(255,255,255,0.2); }
         .faq-item summary {
             padding: 22px 25px; font-size: 1rem; color: #fff; font-weight: 600; cursor: pointer;
             list-style: none; display: flex; justify-content: space-between; align-items: center;
         }
-        .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after { content: '+'; font-size: 1.5rem; color: #555; transition: 0.3s transform; font-weight: 300; }
+        .faq-item summary::after { content: '+'; font-size: 1.5rem; color: #555; transition: 0.3s transform; }
         .faq-item[open] summary::after { content: '−'; transform: rotate(180deg); color: #fff; }
-        .faq-answer { padding: 0 25px 25px; color: #888; font-size: 0.9rem; line-height: 1.6; border-top: 1px solid transparent; }
-        .faq-item[open] .faq-answer { border-top-color: rgba(255,255,255,0.05); padding-top: 20px; }
+        .faq-answer { padding: 0 25px 25px; color: #888; font-size: 0.9rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; display: none; }
+        .faq-item[open] .faq-answer { display: block; }
 
         /* Nossa Base */
         .about-card {
@@ -143,48 +162,39 @@
         .about-header h2 { color: #fff; font-size: 1.6rem; letter-spacing: -1px; margin-bottom: 10px; line-height: 1.2; }
         .about-header p { color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; font-weight: 700; }
         .about-text p { color: #999; font-size: 0.95rem; line-height: 1.7; font-weight: 300; margin-bottom: 15px; }
-        .about-text strong { color: #fff; font-weight: 600; }
 
-        /* Citação Estoica */
+        /* Citação Sêneca */
         .quote-section {
-            text-align: center; max-width: 650px; margin: 60px auto 10px; padding: 0 20px;
+            text-align: center; max-width: 650px; margin: 80px auto 20px; padding: 0 20px;
         }
-        .quote-section p.quote-text {
-            color: #777; font-size: 1.1rem; font-style: italic; line-height: 1.7; font-weight: 300;
-        }
-        .quote-section p.quote-author {
-            color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; margin-top: 15px; font-weight: 600;
-        }
+        .quote-text { color: #777; font-size: 1.15rem; font-style: italic; line-height: 1.7; font-weight: 300; }
+        .quote-author { color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; margin-top: 15px; font-weight: 600; }
 
-        /* Rodapé Profissional */
         .footer { 
             margin-top: 50px; padding: 50px 20px 30px; 
             border-top: 1px solid rgba(255, 255, 255, 0.05); 
             display: flex; flex-direction: column; align-items: center; text-align: center;
         }
-        .footer-brand { margin-bottom: 25px; }
         .footer-brand h3 { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; color: #fff; margin-bottom: 5px; }
         .footer-brand p { color: #555; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); width: 100%; max-width: 400px; padding-top: 20px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); width: 100%; max-width: 400px; padding-top: 20px; margin-top: 20px; }
         .footer-bottom p { color: #444; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
         .wpp-float {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; 
             width: 60px; height: 60px; border-radius: 50%; display: flex; 
             align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000; transition: 0.3s; text-decoration: none;
+            z-index: 1000; transition: 0.3s;
         }
-        .wpp-float:hover { transform: scale(1.1); background: #1ebd5c; }
         .wpp-float svg { width: 32px; height: 32px; fill: #fff; }
 
         @media (max-width: 768px) {
             .process-grid { grid-template-columns: 1fr; }
-            .carousel-container { padding: 20px 35px; }
             .feedback-card { width: 100%; }
             .card { flex-direction: column; text-align: center; }
             .about-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 30px 20px; }
             .btn-play { width: 100%; justify-content: center; }
-            .wpp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+            .carousel-container { padding: 25px 35px; }
         }
     </style>
 </head>
@@ -195,6 +205,10 @@
             <img src="img/logo-aiex.png" alt="Aiex" class="logo-img" onerror="this.style.display='none';">
             <p class="tagline">Soluções Digitais e Inteligentes</p>
         </header>
+
+        <div class="cta-header">
+            <a href="https://wa.me/5521973124106" class="btn-contact-main" target="_blank">Fale com um especialista</a>
+        </div>
 
         <section class="intro-box">
             <h2>Nosso Propósito</h2>
@@ -245,8 +259,15 @@
                     <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
                     <h4 style="color: #fff; font-size: 0.95rem;">Sabor Radical</h4>
                     <div class="stars">★★★★★</div>
-                    <p class="client-quote">"Mudou a operação. Processo de produção e vendas 100% otimizados e sem falhas."</p>
-                    <span class="service-tag">Cardápio Digital + Agente de IA</span>
+                    <p class="client-quote">"O cardápio digital eliminou erros de pedidos e agilizou nossa cozinha."</p>
+                    <span class="service-tag">Cardápio Digital</span>
+                </div>
+                <div class="feedback-card">
+                    <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
+                    <h4 style="color: #fff; font-size: 0.95rem;">Sabor Radical</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"A IA de atendimento reduziu nossa carga horária manual drasticamente."</p>
+                    <span class="service-tag">Agente de IA</span>
                 </div>
 
                 <div class="feedback-card">
@@ -267,10 +288,16 @@
                     <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
                     <h4 style="color: #fff; font-size: 0.95rem;">Sabor Radical</h4>
                     <div class="stars">★★★★★</div>
-                    <p class="client-quote">"Mudou a operação. Processo de produção e vendas 100% otimizados e sem falhas."</p>
-                    <span class="service-tag">Cardápio Digital + Agente de IA</span>
+                    <p class="client-quote">"O cardápio digital eliminou erros de pedidos e agilizou nossa cozinha."</p>
+                    <span class="service-tag">Cardápio Digital</span>
                 </div>
-
+                <div class="feedback-card">
+                    <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
+                    <h4 style="color: #fff; font-size: 0.95rem;">Sabor Radical</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"A IA de atendimento reduziu nossa carga horária manual drasticamente."</p>
+                    <span class="service-tag">Agente de IA</span>
+                </div>
             </div>
             <button class="carousel-btn btn-right" onclick="moveSlide(1)">❯</button>
         </div>
@@ -282,7 +309,7 @@
                 <div class="content">
                     <h3>Organiza+</h3>
                     <p>Controle financeiro total. Orçamento, despesas e fluxo de caixa monitorados em tempo real de um jeito que qualquer pessoa entende.</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.fincontrol" class="btn-play">Download na Play Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.fincontrol" class="btn-play" target="_blank">Download na Play Store</a>
                 </div>
             </div>
         </div>
@@ -347,8 +374,8 @@
         </div>
 
         <div class="quote-section">
-            <p class="quote-text">"A maior parte do que fazemos não é essencial. Se você eliminar isso, terá mais tempo e mais tranquilidade."</p>
-            <p class="quote-author">— Marco Aurélio</p>
+            <p class="quote-text">"Não é que temos pouco tempo, mas que o desperdiçamos muito com aquilo que não importa."</p>
+            <p class="quote-author">— Sêneca</p>
         </div>
 
         <footer class="footer">
