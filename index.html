@@ -23,14 +23,11 @@
         .logo-img { max-width: 150px; filter: brightness(0) invert(1); margin-bottom: 8px; }
         .tagline { color: #888; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
 
-        /* Propósito (Reescrito sem repetições) */
         .intro-box {
             text-align: center;
             background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 35px;
-            border-radius: 20px;
-            margin-top: 20px;
+            padding: 35px; border-radius: 20px; margin-top: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .intro-box h2 { font-size: 1.1rem; color: #fff; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
@@ -42,14 +39,17 @@
         }
         .category-title::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
 
-        /* Carrossel de Empresas */
-        .carousel-container { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0 40px; }
-        .carousel-track { display: flex; gap: 15px; transition: transform 0.5s ease; width: 100%; justify-content: center; }
+        /* Carrossel Infinito Corrigido */
+        .carousel-container { position: relative; overflow: hidden; padding: 0 45px; }
+        .carousel-track { display: flex; gap: 15px; width: 100%; transition: transform 0.4s ease-in-out; }
+        
         .feedback-card {
-            min-width: 250px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+            width: calc(33.333% - 10px); /* Exibe 3 por vez no PC */
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
             padding: 20px; border-radius: 20px; text-align: center; flex-shrink: 0; transition: 0.3s;
         }
         .feedback-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); }
+        
         .client-thumb {
             width: 70px; height: 70px; margin: 0 auto 12px; border-radius: 18px; 
             overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center;
@@ -57,24 +57,22 @@
         .client-thumb img { width: 100%; height: auto; }
         
         .carousel-btn {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; 
-            width: 35px; height: 35px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; 
-            transition: 0.3s; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+            background: #111; border: 1px solid rgba(255,255,255,0.1); color: #fff; 
+            width: 38px; height: 38px; border-radius: 50%; cursor: pointer; position: absolute; z-index: 10; 
+            top: 50%; transform: translateY(-50%); transition: 0.3s; display: flex; align-items: center; justify-content: center; font-size: 1rem;
         }
-        .carousel-btn:hover { background: #fff; color: #000; transform: scale(1.1); }
+        .carousel-btn:hover { background: #fff; color: #000; transform: translateY(-50%) scale(1.1); }
         .btn-left { left: 0; }
         .btn-right { right: 0; }
 
-        /* Cards e Animação de Ícone Restaurada */
+        /* Cards Gerais */
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .card { 
             background: #0a0a0a; border: 1px solid rgba(255, 255, 255, 0.05); 
-            padding: 30px; border-radius: 25px; display: flex; gap: 25px; align-items: center;
-            transition: 0.3s;
+            padding: 30px; border-radius: 25px; display: flex; gap: 25px; align-items: center; transition: 0.3s;
         }
         .card:hover { border-color: rgba(255,255,255,0.15); }
         
-        /* O efeito Glow no ícone voltou aqui */
         .icon-box { 
             width: 85px; height: 85px; flex-shrink: 0; border-radius: 22px; 
             background: #111; border: 1px solid rgba(255,255,255,0.1);
@@ -82,16 +80,13 @@
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .card:hover .icon-box { 
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-            border-color: rgba(255,255,255,0.4);
-            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15); border-color: rgba(255,255,255,0.4); transform: translateY(-5px);
         }
         .icon-box img { width: 100%; height: 100%; border-radius: 22px; }
 
         .content h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
         .content p { color: #888; font-size: 0.95rem; line-height: 1.5; }
 
-        /* Botão Play Store Premium */
         .btn-play {
             display: inline-flex; align-items: center; gap: 12px;
             background: linear-gradient(145deg, #ffffff, #e0e0e0); color: #000; 
@@ -107,7 +102,6 @@
             border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; margin-top: 15px; cursor: default;
         }
 
-        /* FAQ Estilizado */
         .faq-item {
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
             padding: 25px; margin-bottom: 15px; border-radius: 18px; transition: 0.3s;
@@ -116,18 +110,14 @@
         .faq-item h4 { font-size: 1rem; color: #fff; margin-bottom: 10px; font-weight: 700; }
         .faq-item p { font-size: 0.9rem; color: #888; font-weight: 300; }
 
-        /* Nossa Base (Com visual Premium) */
         .about-card {
-            background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 40px; border-radius: 25px; margin-top: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%); border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px; border-radius: 25px; margin-top: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
         .about-card h2 { color: #fff; font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 2px; text-transform: uppercase; }
         .about-card p { color: #999; font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
         .about-card strong { color: #fff; font-weight: 600; }
 
-        /* WhatsApp Flutuante Oficial */
         .wpp-float {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; 
             width: 60px; height: 60px; border-radius: 50%; display: flex; 
@@ -137,10 +127,10 @@
         .wpp-float:hover { transform: scale(1.1); background: #1ebd5c; }
         .wpp-float svg { width: 32px; height: 32px; fill: #fff; }
 
+        /* Ajustes Mobile */
         @media (max-width: 600px) {
+            .feedback-card { width: 100%; } /* Exibe 1 por vez no celular */
             .card { flex-direction: column; text-align: center; }
-            .carousel-container { padding: 0 30px; }
-            .carousel-track { transform: none !important; }
             .btn-play { width: 100%; justify-content: center; }
             .wpp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
         }
@@ -169,9 +159,9 @@
             <button class="carousel-btn btn-left" onclick="moveSlide(-1)">❮</button>
             <div class="carousel-track" id="track">
                 <div class="feedback-card">
-                    <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
-                    <h4 style="color: #fff; font-size: 0.9rem; margin-bottom: 5px;">Sabor Radical</h4>
-                    <p style="font-size:0.75rem; color:#666;">"Automação de produção completa."</p>
+                    <div class="client-thumb"><img src="img/logo-fera-lanche.png" alt="O Fera do Lanche" onerror="this.parentNode.innerHTML='FL'"></div>
+                    <h4 style="color: #fff; font-size: 0.9rem; margin-bottom: 5px;">O Fera do Lanche</h4>
+                    <p style="font-size:0.75rem; color:#666;">"Gestão de pedidos simplificada."</p>
                 </div>
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-comari.png" alt="Espaço Comari" onerror="this.parentNode.innerHTML='EC'"></div>
@@ -179,9 +169,24 @@
                     <p style="font-size:0.75rem; color:#666;">"Atendimento ágil no WhatsApp."</p>
                 </div>
                 <div class="feedback-card">
+                    <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
+                    <h4 style="color: #fff; font-size: 0.9rem; margin-bottom: 5px;">Sabor Radical</h4>
+                    <p style="font-size:0.75rem; color:#666;">"Automação de produção completa."</p>
+                </div>
+                <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-fera-lanche.png" alt="O Fera do Lanche" onerror="this.parentNode.innerHTML='FL'"></div>
                     <h4 style="color: #fff; font-size: 0.9rem; margin-bottom: 5px;">O Fera do Lanche</h4>
                     <p style="font-size:0.75rem; color:#666;">"Gestão de pedidos simplificada."</p>
+                </div>
+                <div class="feedback-card">
+                    <div class="client-thumb"><img src="img/logo-comari.png" alt="Espaço Comari" onerror="this.parentNode.innerHTML='EC'"></div>
+                    <h4 style="color: #fff; font-size: 0.9rem; margin-bottom: 5px;">Espaço Comari</h4>
+                    <p style="font-size:0.75rem; color:#666;">"Atendimento ágil no WhatsApp."</p>
+                </div>
+                <div class="feedback-card">
+                    <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
+                    <h4 style="color: #fff; font-size: 0.9rem; margin-bottom: 5px;">Sabor Radical</h4>
+                    <p style="font-size:0.75rem; color:#666;">"Automação de produção completa."</p>
                 </div>
             </div>
             <button class="carousel-btn btn-right" onclick="moveSlide(1)">❯</button>
@@ -250,17 +255,33 @@
     </a>
 
     <script>
-        let currentSlide = 0;
         function moveSlide(direction) {
             const track = document.getElementById('track');
-            const cards = document.querySelectorAll('.feedback-card');
+            const cards = track.children;
+            if (cards.length === 0) return;
             
-            if (cards.length > 0) {
-                const totalCards = cards.length;
-                currentSlide = (currentSlide + direction + totalCards) % totalCards;
-                // Pega a largura do card + o gap (15px)
-                const offset = currentSlide * -(cards[0].offsetWidth + 15);
-                track.style.transform = `translateX(${offset}px)`;
+            // Pega a largura do card + o espaço (gap)
+            const cardWidth = cards[0].offsetWidth + 15; 
+            
+            if (direction === 1) { // Próximo (Seta Direita)
+                track.style.transition = 'transform 0.4s ease-in-out';
+                track.style.transform = `translateX(-${cardWidth}px)`;
+                
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    track.appendChild(track.firstElementChild); // Joga o primeiro pro final
+                    track.style.transform = 'translateX(0)';
+                }, 400); // Aguarda o fim da transição CSS
+                
+            } else { // Anterior (Seta Esquerda)
+                track.style.transition = 'none';
+                track.prepend(track.lastElementChild); // Puxa o último pro começo
+                track.style.transform = `translateX(-${cardWidth}px)`;
+                
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.4s ease-in-out';
+                    track.style.transform = 'translateX(0)';
+                }, 10); // Um pequeno atraso pro navegador entender a troca
             }
         }
     </script>
