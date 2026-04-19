@@ -49,7 +49,7 @@
         .process-card h4 { font-size: 1rem; color: #fff; margin-bottom: 10px; position: relative; z-index: 2; }
         .process-card p { font-size: 0.85rem; color: #777; position: relative; z-index: 2; line-height: 1.5; }
 
-        /* Carrossel de Empresas Atendidas (ESTRATÉGICO) */
+        /* Carrossel de Empresas Atendidas */
         .carousel-container { position: relative; overflow: hidden; padding: 0 45px; }
         .carousel-track { display: flex; gap: 15px; width: 100%; transition: transform 0.4s ease-in-out; }
         
@@ -57,14 +57,22 @@
             width: calc(33.333% - 10px); /* 3 por vez no PC */
             background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
             padding: 25px 20px; border-radius: 20px; text-align: center; flex-shrink: 0; transition: 0.3s;
+            display: flex; flex-direction: column; align-items: center; justify-content: space-between;
         }
         .feedback-card:hover { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); transform: translateY(-5px); }
         
         .client-thumb {
-            width: 75px; height: 75px; margin: 0 auto 15px; border-radius: 18px; 
+            width: 70px; height: 70px; margin: 0 auto 10px; border-radius: 18px; 
             overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center;
         }
         .client-thumb img { width: 100%; height: auto; }
+        .stars { color: #FFD700; font-size: 0.75rem; margin-bottom: 8px; letter-spacing: 1px; }
+        .client-quote { font-size: 0.8rem; color: #888; font-style: italic; margin-bottom: 15px; line-height: 1.4; }
+        .service-tag { 
+            display: inline-block; font-size: 0.65rem; color: #fff; 
+            background: rgba(255,255,255,0.1); padding: 6px 12px; 
+            border-radius: 8px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;
+        }
         
         .carousel-btn {
             background: #111; border: 1px solid rgba(255,255,255,0.1); color: #fff; 
@@ -126,17 +134,28 @@
         .faq-answer { padding: 0 25px 25px; color: #888; font-size: 0.9rem; line-height: 1.6; border-top: 1px solid transparent; }
         .faq-item[open] .faq-answer { border-top-color: rgba(255,255,255,0.05); padding-top: 20px; }
 
-        /* Nossa Base */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        /* Nossa Base - Mais Neutra e Profissional */
         .about-card {
             background: linear-gradient(145deg, #0f0f0f 0%, #050505 100%); border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 40px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+            margin-top: 40px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center;
         }
-        .about-header h2 { color: #fff; font-size: 1.6rem; letter-spacing: -1px; margin-bottom: 10px; }
+        .about-header h2 { color: #fff; font-size: 1.6rem; letter-spacing: -1px; margin-bottom: 10px; line-height: 1.2; }
         .about-header p { color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; font-weight: 700; }
         .about-text p { color: #999; font-size: 0.95rem; line-height: 1.7; font-weight: 300; margin-bottom: 15px; }
         .about-text strong { color: #fff; font-weight: 600; }
+
+        /* Rodapé Profissional */
+        .footer { 
+            margin-top: 80px; padding: 50px 20px 30px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.05); 
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+        .footer-brand { margin-bottom: 25px; }
+        .footer-brand h3 { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; color: #fff; margin-bottom: 5px; }
+        .footer-brand p { color: #555; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); width: 100%; max-width: 400px; padding-top: 20px; }
+        .footer-bottom p { color: #444; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
         .wpp-float {
             position: fixed; bottom: 30px; right: 30px; background: #25D366; 
@@ -149,15 +168,12 @@
 
         @media (max-width: 768px) {
             .process-grid { grid-template-columns: 1fr; }
-            .feedback-card { width: 100%; } /* 1 por vez no Mobile */
+            .feedback-card { width: 100%; }
             .card { flex-direction: column; text-align: center; }
             .about-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 30px 20px; }
             .btn-play { width: 100%; justify-content: center; }
             .wpp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
         }
-
-        .footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center; }
-        .footer-info { color:#444; font-size:0.75rem; font-weight: 800; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -171,7 +187,7 @@
         <section class="intro-box">
             <h2>Nosso Propósito</h2>
             <p>
-                A <strong>Aiex</strong> é um laboratório de tecnologia focado em simplificar a rotina. Desenvolvemos soluções financeiras para <strong>pessoas</strong> que exigem controle absoluto sobre suas contas, e criamos sistemas de automação para <strong>empresas</strong> que precisam parar de perder tempo com tarefas manuais para focar no que realmente gera lucro.
+                A <strong>Aiex</strong> é um laboratório de tecnologia focado em simplificar a rotina. Desenvolvemos soluções financeiras para <strong>pessoas</strong> que exigem controle absoluto sobre suas contas, e criamos sistemas de automação para <strong>empresas</strong> que precisam parar de perder tempo com tarefas operacionais.
             </p>
         </section>
 
@@ -180,17 +196,17 @@
             <div class="process-card">
                 <span class="process-num">01</span>
                 <h4>Mapeamento</h4>
-                <p>Analisamos os gargalos operacionais da sua empresa, focando exatamente onde você perde tempo e dinheiro.</p>
+                <p>O foco principal é analisar os gargalos operacionais do seu negócio, identificando exatamente onde há perda de tempo e dinheiro.</p>
             </div>
             <div class="process-card">
                 <span class="process-num">02</span>
                 <h4>Desenvolvimento</h4>
-                <p>Criamos fluxos de automação, IA ou aplicativos sob medida, unindo código limpo à estratégia de negócios.</p>
+                <p>Sistemas de automação, IA ou aplicativos são configurados sob medida, unindo a programação à estratégia direta de vendas.</p>
             </div>
             <div class="process-card">
                 <span class="process-num">03</span>
                 <h4>Escala</h4>
-                <p>Implementamos a tecnologia na sua rotina. Sua equipe foca em vender, enquanto os sistemas fazem o trabalho duro.</p>
+                <p>A tecnologia é implementada na rotina. O empreendedor foca em pensar o negócio, enquanto as ferramentas executam o trabalho duro.</p>
             </div>
         </div>
 
@@ -198,36 +214,51 @@
         <div class="carousel-container">
             <button class="carousel-btn btn-left" onclick="moveSlide(-1)">❮</button>
             <div class="carousel-track" id="track">
+                
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-fera-lanche.png" alt="O Fera do Lanche" onerror="this.parentNode.innerHTML='FL'"></div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">O Fera do Lanche</h4>
-                    <p style="font-size:0.8rem; color:#666;">Solução: Cardápio Digital</p>
+                    <h4 style="color: #fff; font-size: 0.95rem;">O Fera do Lanche</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"Nossos pedidos agora chegam totalmente limpos e organizados no WhatsApp."</p>
+                    <span class="service-tag">Cardápio Digital</span>
                 </div>
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-comari.png" alt="Espaço Comari" onerror="this.parentNode.innerHTML='EC'"></div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">Espaço Comari</h4>
-                    <p style="font-size:0.8rem; color:#666;">Solução: Agente de IA</p>
+                    <h4 style="color: #fff; font-size: 0.95rem;">Espaço Comari</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"Atendimento impecável 24h por dia. Nossos clientes não ficam mais esperando."</p>
+                    <span class="service-tag">Agente de IA</span>
                 </div>
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">Sabor Radical</h4>
-                    <p style="font-size:0.8rem; color:#666;">Solução: Ecossistema de Automação</p>
+                    <h4 style="color: #fff; font-size: 0.95rem;">Sabor Radical</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"Mudou a operação. Processo de produção e vendas 100% otimizados e sem falhas."</p>
+                    <span class="service-tag">Integração Total</span>
                 </div>
+
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-fera-lanche.png" alt="O Fera do Lanche" onerror="this.parentNode.innerHTML='FL'"></div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">O Fera do Lanche</h4>
-                    <p style="font-size:0.8rem; color:#666;">Solução: Cardápio Digital</p>
+                    <h4 style="color: #fff; font-size: 0.95rem;">O Fera do Lanche</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"Nossos pedidos agora chegam totalmente limpos e organizados no WhatsApp."</p>
+                    <span class="service-tag">Cardápio Digital</span>
                 </div>
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-comari.png" alt="Espaço Comari" onerror="this.parentNode.innerHTML='EC'"></div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">Espaço Comari</h4>
-                    <p style="font-size:0.8rem; color:#666;">Solução: Agente de IA</p>
+                    <h4 style="color: #fff; font-size: 0.95rem;">Espaço Comari</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"Atendimento impecável 24h por dia. Nossos clientes não ficam mais esperando."</p>
+                    <span class="service-tag">Agente de IA</span>
                 </div>
                 <div class="feedback-card">
                     <div class="client-thumb"><img src="img/logo-sabor-radical.png" alt="Sabor Radical" onerror="this.parentNode.innerHTML='SR'"></div>
-                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 5px;">Sabor Radical</h4>
-                    <p style="font-size:0.8rem; color:#666;">Solução: Ecossistema de Automação</p>
+                    <h4 style="color: #fff; font-size: 0.95rem;">Sabor Radical</h4>
+                    <div class="stars">★★★★★</div>
+                    <p class="client-quote">"Mudou a operação. Processo de produção e vendas 100% otimizados e sem falhas."</p>
+                    <span class="service-tag">Integração Total</span>
                 </div>
+
             </div>
             <button class="carousel-btn btn-right" onclick="moveSlide(1)">❯</button>
         </div>
@@ -250,7 +281,7 @@
                 <div class="icon-box"><span style="font-size:2.5rem;">🤖</span></div>
                 <div class="content">
                     <h3>Agente IA</h3>
-                    <p>Atendimento humano e automático no seu WhatsApp para sua empresa nunca mais perder uma venda por demora nas respostas.</p>
+                    <p>Atendimento humano e automático no WhatsApp. O bot captura intenções de compra e faz a triagem sem que você precise tocar no celular.</p>
                     <div class="status-button">Indisponível</div>
                 </div>
             </div>
@@ -268,23 +299,23 @@
         <div class="faq-accordion">
             <details class="faq-item">
                 <summary>O que é necessário para ter o Cardápio Digital?</summary>
-                <div class="faq-answer">Apenas o seu cardápio base (produtos, descrições, preços) e um número de WhatsApp. Nossa equipe estrutura o catálogo e cria o link final para você divulgar aos seus clientes. O pedido cai formatado direto no seu chat.</div>
+                <div class="faq-answer">Apenas o seu cardápio base (produtos, descrições, preços) e um número de WhatsApp. O catálogo é estruturado e o link final é gerado para você divulgar aos seus clientes. O pedido cai formatado direto no seu chat, pronto para produção.</div>
             </details>
             <details class="faq-item">
                 <summary>Como o Agente de IA conversa com os clientes?</summary>
-                <div class="faq-answer">Nós treinamos a inteligência artificial exclusivamente com as regras, preços e tom de voz da sua empresa. Ela lê o contexto da conversa, entende a dúvida do cliente e responde de forma natural, como se fosse um vendedor humano.</div>
+                <div class="faq-answer">A inteligência artificial é treinada exclusivamente com as regras, preços e tom de voz da sua empresa. Ela lê o contexto da conversa, entende a dúvida do cliente e responde de forma natural, como se fosse um atendente focado em conversão.</div>
             </details>
             <details class="faq-item">
-                <summary>Preciso saber programação para usar as soluções?</summary>
-                <div class="faq-answer">De forma alguma. O foco da Aiex é justamente simplificar. Nós cuidamos de toda a infraestrutura tecnológica pesada nos bastidores. Para você e sua equipe, o uso é totalmente visual, prático e integrado ao WhatsApp.</div>
+                <summary>Preciso de conhecimento técnico para usar as soluções?</summary>
+                <div class="faq-answer">De forma alguma. O ecossistema da Aiex é construído para quem precisa de agilidade. Toda a infraestrutura tecnológica pesada fica nos bastidores. Para o seu dia a dia, o uso é totalmente visual, prático e integrado ao seu WhatsApp.</div>
             </details>
             <details class="faq-item">
-                <summary>Em quanto tempo vejo retorno na automação?</summary>
-                <div class="faq-answer">Imediatamente após a implementação. Negócios que implementam nossos sistemas relatam o fim de erros em pedidos e o ganho instantâneo de horas livres diárias, já que a equipe de vendas deixa de fazer trabalho braçal repetitivo.</div>
+                <summary>Em quanto tempo os negócios percebem o retorno?</summary>
+                <div class="faq-answer">O ganho de eficiência é imediato após a implementação. Negócios relatam o fim drástico de erros operacionais em pedidos e o ganho instantâneo de horas livres diárias, já que as ferramentas assumem os processos repetitivos.</div>
             </details>
             <details class="faq-item">
-                <summary>O aplicativo Organiza+ é seguro e privado?</summary>
-                <div class="faq-answer">Sim, segurança é nossa prioridade técnica. O Organiza+ foi desenvolvido seguindo protocolos rígidos. Os dados financeiros são processados localmente e criptografados, garantindo que apenas você tenha acesso ao seu patrimônio.</div>
+                <summary>Os dados financeiros no Organiza+ estão seguros?</summary>
+                <div class="faq-answer">Absolutamente. Segurança é o pilar do aplicativo. O Organiza+ foi desenvolvido com protocolos rígidos. Os dados são processados e armazenados com segurança, garantindo total privacidade sobre o seu controle financeiro.</div>
             </details>
         </div>
 
@@ -295,16 +326,22 @@
             </div>
             <div class="about-text">
                 <p>
-                    A <strong>Aiex</strong> é liderada por <strong>Mikhail Ayache</strong>. Nossa diferença no mercado é simples: não somos apenas programadores escrevendo linhas de código, somos gestores de negócios resolvendo gargalos reais.
+                    A essência da <strong>Aiex</strong> baseia-se na visão técnica de seu criador, <strong>Mikhail Ayache</strong>. O diferencial dos nossos sistemas é que eles não são apenas linhas de código genéricas, mas sim ferramentas pensadas por quem entende de gestão empresarial.
                 </p>
                 <p>
-                    Toda solução de automação, do Organiza+ aos Agentes de IA, nasceu da vivência prática no chão de fábrica e na logística do empreendedorismo. Unimos a <strong>ciência da Administração</strong> à <strong>agilidade do Software</strong> para escalar operações de forma inteligente.
+                    Toda solução de automação, desde o controle financeiro do Organiza+ até a lógica dos Agentes de IA, nasceu da vivência prática no cotidiano de negócios reais. A missão é aplicar a <strong>ciência da Administração</strong> através da <strong>agilidade do Software</strong> para escalar operações de forma sólida.
                 </p>
             </div>
         </div>
 
         <footer class="footer">
-            <p class="footer-info">© 2026 AIEX | DESENVOLVIDO POR MIKHAIL AYACHE</p>
+            <div class="footer-brand">
+                <h3>AIEX</h3>
+                <p>Soluções Digitais e Inteligentes</p>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AIEX | Desenvolvido por Mikhail Ayache</p>
+            </div>
         </footer>
     </div>
 
@@ -320,10 +357,9 @@
             const cards = track.children;
             if (cards.length === 0) return;
             
-            // Pega a largura do card + o espaço (gap)
             const cardWidth = cards[0].offsetWidth + 15; 
             
-            if (direction === 1) { // Seta Direita
+            if (direction === 1) { 
                 track.style.transition = 'transform 0.4s ease-in-out';
                 track.style.transform = `translateX(-${cardWidth}px)`;
                 
@@ -333,7 +369,7 @@
                     track.style.transform = 'translateX(0)';
                 }, 400); 
                 
-            } else { // Seta Esquerda
+            } else { 
                 track.style.transition = 'none';
                 track.prepend(track.lastElementChild);
                 track.style.transform = `translateX(-${cardWidth}px)`;
