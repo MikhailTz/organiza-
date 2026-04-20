@@ -85,7 +85,7 @@
         .btn-left { left: 0; }
         .btn-right { right: 0; }
 
-        /* Grid de Apps e Soluções */
+        /* Grid */
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .card { 
             background: #0a0a0a; border: 1px solid rgba(255, 255, 255, 0.05); 
@@ -189,7 +189,7 @@
             letter-spacing: 3px;
         }
 
-        /* Rodapé Ajustado */
+        /* Rodapé Premium */
         .footer-premium {
             padding: 60px 20px 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -198,7 +198,7 @@
         .footer-container {
             max-width: 900px; margin: 0 auto; display: grid;
             grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
-            align-items: center; /* Centraliza verticalmente as colunas */
+            align-items: center; 
         }
         .brand-col { display: flex; flex-direction: column; }
         .brand-col .footer-logo { max-width: 120px; filter: brightness(0) invert(1); margin-bottom: 15px; }
@@ -218,7 +218,7 @@
         .footer-bottom-bar {
             max-width: 900px; margin: 0 auto; padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex; justify-content: center; align-items: center; flex-wrap: wrap; text-align: center;
+            display: flex; justify-content: center; align-items: center; text-align: center;
         }
         .footer-bottom-bar p { color: #555; font-size: 0.75rem; }
 
@@ -231,6 +231,7 @@
         .wpp-float:hover { transform: scale(1.1); background: #1ebd5c; }
         .wpp-float svg { width: 32px; height: 32px; fill: #fff; }
 
+        /* Ajustes Finais do Mobile - O Segredo da Centralização Perfeita */
         @media (max-width: 768px) {
             .process-grid { grid-template-columns: 1fr; }
             .card { flex-direction: column; text-align: center; }
@@ -243,13 +244,24 @@
             .standalone-quote { padding: 50px 20px 30px; }
             .wpp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
             
-            /* Ajuste Fino do Carrossel Mobile */
-            .carousel-container { padding: 25px 0; }
-            .carousel-track { padding-left: 10vw; padding-right: 10vw; gap: 15px; }
-            .feedback-card { width: 80vw; }
-            .carousel-btn { width: 34px; height: 34px; font-size: 0.8rem; top: 43%; } /* Setas mais para cima visualmente */
-            .btn-left { left: 5px; }
-            .btn-right { right: 5px; }
+            /* Correção Milimétrica do Carrossel */
+            .carousel-container { 
+                margin-left: -20px; /* Faz o container ignorar a margem da tela e ir de ponta a ponta */
+                margin-right: -20px; 
+                width: calc(100% + 40px); /* Garante que a largura cubra toda a tela do celular */
+                padding: 25px 0; 
+            }
+            .carousel-track { 
+                padding-left: 10vw; /* Empurra o primeiro card exatos 10% da tela */
+                padding-right: 10vw; 
+                gap: 15px; 
+            }
+            .feedback-card { 
+                width: 80vw; /* Card ocupa 80%. Sobram 20% (10% na esquerda, 10% na direita). Centro perfeito! */
+            }
+            .carousel-btn { width: 34px; height: 34px; font-size: 0.8rem; top: 43%; } 
+            .btn-left { left: 10px; } 
+            .btn-right { right: 10px; }
         }
     </style>
 </head>
@@ -264,7 +276,9 @@
         <section class="intro-box">
             <h2>Nosso Propósito</h2>
             <p>
-                A <strong>Aiex</strong> é um laboratório de tecnologia focado em simplificar a rotina. Desenvolvemos soluções financeiras para <strong>pessoas</strong> que exigem controle absoluto sobre suas contas, e criamos sistemas de automação para <strong>empresas</strong> que precisam parar de perder tempo com tarefas operacionais.
+                Simplificamos a rotina com tecnologia.
+
+Criamos soluções financeiras e sistemas que colocam você no controle e eliminam processos desnecessários.
             </p>
         </section>
 
