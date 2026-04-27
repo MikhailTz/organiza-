@@ -511,6 +511,9 @@
     </a>
 
     <script>
+        let isAnimating = false;
+        let autoPlayTimer; // Variável para controlar o tempo do giro
+
         document.addEventListener("DOMContentLoaded", function() {
             const track = document.getElementById('track');
             const originalCards = Array.from(track.children);
@@ -520,9 +523,23 @@
                 let clone = card.cloneNode(true);
                 track.appendChild(clone);
             });
+
+            // Inicia o giro automático assim que o site carrega
+            startAutoPlay();
         });
 
-        let isAnimating = false;
+        function startAutoPlay() {
+            // Configura para girar a cada 3 segundos (3000 milissegundos)
+            autoPlayTimer = setInterval(() => {
+                moveSlide(1);
+            }, 3000);
+        }
+
+        function resetAutoPlay() {
+            // Zera o cronômetro se o usuário clicar na seta, para não dar conflito
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
 
         function moveSlide(direction) {
             if (isAnimating) return;
@@ -559,6 +576,9 @@
                     isAnimating = false;
                 }, 410);
             }
+
+            // Reinicia a contagem toda vez que um slide roda
+            resetAutoPlay();
         }
     </script>
 
