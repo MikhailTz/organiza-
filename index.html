@@ -113,10 +113,9 @@
             background: #111; border: 1px solid rgba(255,255,255,0.1);
             display: flex; align-items: center; justify-content: center;
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
         }
         .card:hover .icon-box { box-shadow: 0 0 25px rgba(255, 255, 255, 0.15); border-color: rgba(255,255,255,0.4); transform: translateY(-5px); }
-        .icon-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; }
+        .icon-box img { width: 100%; height: 100%; border-radius: 22px; }
 
         .content h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
         .content p { color: #888; font-size: 0.95rem; line-height: 1.5; }
@@ -179,11 +178,10 @@
         .about-header h2 { color: #fff; font-size: 1.6rem; letter-spacing: -1px; margin-bottom: 10px; line-height: 1.2; }
         .about-header p { color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; font-weight: 700; margin-bottom: 20px; }
         
-        /* Nova classe para a logo da seção sobre */
-        .about-logo {
-            max-width: 140px;
-            filter: brightness(0) invert(1);
-            margin-top: 40px; /* Descola do H2 */
+        /* Classe para o ícone da aba na seção sobre */
+        .about-favicon {
+            max-width: 60px; /* Tamanho menor para o ícone */
+            margin-top: 20px;
             display: block;
         }
 
@@ -261,7 +259,7 @@
             .process-grid { grid-template-columns: 1fr; }
             .card { flex-direction: column; text-align: center; }
             .about-card { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 30px 20px; }
-            .about-logo { margin: 30px auto 0; } /* Centraliza a logo da seção Sobre no celular */
+            .about-favicon { margin: 20px auto 0; } /* Centraliza o ícone no mobile */
             .btn-play, .btn-whatsapp { width: 100%; justify-content: center; }
             .footer-container { grid-template-columns: 1fr; gap: 30px; text-align: center; align-items: start; }
             .brand-col .footer-logo { margin: 0 auto 15px; }
@@ -346,7 +344,7 @@
                     <div class="stars">★★★★★</div>
                     <p class="client-quote">"Estou ganhando muitas avaliações todos os dias. A visibilidade no Google aumentou demais com esse cartão!"</p>
                     <div class="tags-wrapper">
-                        <span class="service-tag">Cartão Avaliação</span>
+                        <span class="service-tag">Cardápio Avaliação</span>
                     </div>
                 </div>
                 
@@ -390,7 +388,7 @@
         <h2 id="automacao" class="category-title">Software & Automação</h2>
         <div class="grid">
             <div class="card">
-                <div class="icon-box"><img src="img/icone-ia.png" alt="Agente IA" onerror="this.style.display='none'"></div>
+                <div class="icon-box"><span style="font-size:2.5rem;">🤖</span></div>
                 <div class="content">
                     <h3>Agente IA</h3>
                     <p>Atendimento humano e automático no WhatsApp. A IA interage de forma fluida e natural, como se fosse você mesmo digitando.</p>
@@ -399,7 +397,7 @@
             </div>
             
             <div class="card">
-                <div class="icon-box"><img src="img/icone-cardapio.png" alt="Cardápio Digital" onerror="this.style.display='none'"></div>
+                <div class="icon-box"><span style="font-size:2.5rem;">📋</span></div>
                 <div class="content">
                     <h3>Cardápio Digital</h3>
                     <p>Interface rápida e intuitiva. O cliente seleciona os produtos com facilidade e você recebe o pedido totalmente pronto para a produção direto no seu WhatsApp.</p>
@@ -411,7 +409,7 @@
         <h2 id="nfc" class="category-title">Conexão Física & NFC</h2>
         <div class="grid">
             <div class="card">
-                <div class="icon-box"><img src="img/icone-cartao.png" alt="Cartão Avaliação" onerror="this.style.display='none'"></div>
+                <div class="icon-box"><span style="font-size:2.5rem;">💳</span></div>
                 <div class="content">
                     <h3>Cartão Avaliação</h3>
                     <p>Cartão físico com tecnologia NFC e QR Code. O cliente aproxima o celular e é direcionado para avaliar seu negócio no Google, multiplicando sua reputação e visibilidade nas buscas.</p>
@@ -420,7 +418,7 @@
             </div>
 
             <div class="card">
-                <div class="icon-box"><img src="img/icone-tag.png" alt="Tag NFC" onerror="this.style.display='none'"></div>
+                <div class="icon-box"><span style="font-size:2.5rem;">🏷️</span></div>
                 <div class="content">
                     <h3>Tag NFC Inteligente</h3>
                     <p>Versão compacta e altamente personalizável do cartão. Cole em mesas ou balcões e direcione clientes instantaneamente ao seu Instagram, cardápio digital ou outras plataformas com apenas uma aproximação do celular.</p>
@@ -473,7 +471,7 @@
                 <p>Sobre a Aiex</p>
                 <h2>Tecnologia guiada pela realidade dos negócios.</h2>
                 
-                <img src="img/logo-aiex.png" alt="Logo Aiex" class="about-logo" onerror="this.style.display='none';">
+                <img src="img/favicon.png" alt="Ícone Aiex" class="about-favicon" onerror="this.style.display='none';">
                 
             </div>
             <div class="about-text">
